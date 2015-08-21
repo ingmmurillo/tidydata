@@ -9,7 +9,7 @@ setwd("/Users/mmurillo/R/tidydata")
 ```R
 source("run_analysis.R")
 ```
-* Execute the function **run()** to execute the script
+* Execute the function **run()** to start the script
 ```R
 run()
 ```
