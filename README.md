@@ -11,5 +11,5 @@ source("run_analysis.R")
 ```
 * Execute the function **run()** to execute the script
 ```R
-source("run_analysis.R")
+run()
 ```
