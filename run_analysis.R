@@ -68,5 +68,4 @@ createTidyDataSet <- function(data) {
     names(tidyData) <- gsub("Acc", "Accelerometer", names(tidyData))
     names(tidyData) <- gsub("Gyro", "Gyroscope", names(tidyData))
     names(tidyData) <- gsub("Mag", "Magnitude", names(tidyData))
-    View(tidyData)
 }
