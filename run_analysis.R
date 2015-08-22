@@ -2,7 +2,9 @@ library(plyr); library(dplyr)
 
 run <- function() {
     prepareDataSet()
-    tidyData <- createTidyDataSet(mergeData())
+    mergedData <- mergeData()
+    tidyData <- createTidyDataSet(mergedData)
+    summarizeTidyDataSet(tidyData)
 }
 
 prepareDataSet <- function() {
@@ -68,4 +70,12 @@ createTidyDataSet <- function(data) {
     names(tidyData) <- gsub("Acc", "Accelerometer", names(tidyData))
     names(tidyData) <- gsub("Gyro", "Gyroscope", names(tidyData))
     names(tidyData) <- gsub("Mag", "Magnitude", names(tidyData))
+    return(tidyData)
+}
+
+summarizeTidyDataSet <- function(data) {
+    print("Summarizing and writing output Data Set...")
+    tidyDataSummary <- data %>% group_by(subject, activity) %>% summarise_each(funs(mean)) 
+    View(tidyDataSummary)
+    write.table(tidyDataSummary, file = "tidydatasumm.txt", row.names = FALSE)
 }
