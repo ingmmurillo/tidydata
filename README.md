@@ -13,3 +13,7 @@ source("run_analysis.R")
 ```R
 run()
 ```
+**NOTE** the script automatically downloads and unzips the file with the data.
+## Required R Packages
+* plyr v1.8.2
+* dplyr v0.4.2
